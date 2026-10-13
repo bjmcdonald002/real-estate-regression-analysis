@@ -54,6 +54,30 @@ The selected specification is:
 lnY ~ X1 + X3 + X5 + X7 + X8 + X10
 ```
 
+The fitted regression equation is:
+
+$$
+\begin{aligned}
+\widehat{\log(\text{Sale Price})}
+={}&3.984894
++0.000265560(\text{Finished Area})\\
+&+0.044353(\text{Bathrooms})
++0.042334(\text{Garage Capacity})\\
+&+0.00396838(\text{Year Built})
++0.00000495988(\text{Lot Size})\\
+&-0.287522\,I(\text{Medium Quality})
+-0.392216\,I(\text{Low Quality}).
+\end{aligned}
+$$
+
+High quality is the reference category. Each indicator equals 1 when the
+house belongs to that quality category and 0 otherwise. Finished area and
+lot size are measured in square feet, and garage capacity is measured in
+cars. The logarithm is the natural logarithm.
+
+This equation predicts log-price. Dollar predictions in the cross-validation
+analysis also apply a smearing adjustment estimated from training residuals.
+
 It has six explanatory terms and eight regression coefficients including the
 intercept, because construction quality contributes two indicator coefficients.
 
@@ -144,7 +168,9 @@ Kutner, M. H., Nachtsheim, C. J., and Neter, J. (2004).
 *Applied Linear Regression Models*, 4th edition. Data Set C.7, Real Estate Sales.
 
 See [data/README.md](data/README.md) for variable definitions and input provenance.
-The working package includes the original numerical input for local reproduction.
+The source dataset is not included in this public repository. To reproduce the
+analysis, obtain Data Set C.7 from the cited textbook source and place a CSV
+with the documented column names at `data/real_estate_sales.csv`.
 
 ## Reproducibility
 
