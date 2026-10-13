@@ -65,8 +65,8 @@ $$
 +0.042334(\text{Garage Capacity})\\
 &+0.00396838(\text{Year Built})
 +0.00000495988(\text{Lot Size})\\
-&-0.287522\,I(\text{Medium Quality})
--0.392216\,I(\text{Low Quality}).
+&-0.287522 \cdot I(\text{Medium Quality})
+-0.392216 \cdot I(\text{Low Quality}).
 \end{aligned}
 $$
 
