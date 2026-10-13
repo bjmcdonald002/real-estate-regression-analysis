@@ -70,7 +70,7 @@ fold. The procedures with and without style therefore produced identical
 out-of-fold predictions here. The other selected terms varied across folds;
 the full data formula should not be interpreted as uniquely established.
 
-## cross validation
+## Cross Validation
 
 Each observation is predicted once from a model trained on the other eight folds.
 Style grouping and exhaustive BIC selection are repeated using training data only.
