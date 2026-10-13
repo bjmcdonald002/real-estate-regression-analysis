@@ -1,0 +1,8 @@
+# R session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Source data: redistribution rights remain unresolved
+data/real_estate_sales.csv

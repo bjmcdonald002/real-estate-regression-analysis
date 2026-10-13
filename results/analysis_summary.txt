@@ -1,0 +1,102 @@
+Selected main-effect model
+lnY ~ X1 + X3 + X5 + X7 + X8 + X10
+<environment: 0x562b029cb4b0>
+
+Call:
+lm(formula = make_formula(subsets[[winner]]), data = d)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.6537 -0.1104 -0.0056  0.1116  0.5325 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.985e+00  1.189e+00   3.352 0.000863 ***
+X1           2.656e-04  1.914e-05  13.874  < 2e-16 ***
+X3           4.435e-02  1.239e-02   3.579 0.000377 ***
+X5           4.233e-02  1.520e-02   2.784 0.005561 ** 
+X7           3.968e-03  6.011e-04   6.602 1.01e-10 ***
+X82         -2.875e-01  3.045e-02  -9.443  < 2e-16 ***
+X83         -3.922e-01  4.176e-02  -9.392  < 2e-16 ***
+X10          4.960e-06  7.026e-07   7.059 5.46e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1781 on 514 degrees of freedom
+Multiple R-squared:  0.832,	Adjusted R-squared:  0.8297 
+F-statistic: 363.7 on 7 and 514 DF,  p-value: < 2.2e-16
+
+
+Full-model comparison (exploratory post-selection)
+Analysis of Variance Table
+
+Model 1: lnY ~ X1 + X3 + X5 + X7 + X8 + X10
+Model 2: lnY ~ X1 + X2 + X3 + X4 + X5 + X6 + X7 + X8 + X9 + X10 + X11
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+1    514 16.310                                  
+2    503 15.151 11    1.1589 3.4978 9.857e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model-selection winners
+                               terms  p      RSS        R2 adjusted_R2
+2046 X1+X3+X4+X5+X6+X7+X8+X9+X10+X11 18 15.15537 0.8438925    0.838627
+           AIC       BIC       Cp    PRESS
+2046 -328.1493 -247.2537 17.15598 16.54589
+                  terms p      RSS        R2 adjusted_R2       AIC       BIC
+1197 X1+X3+X5+X7+X8+X10 8 16.30959 0.8320035   0.8297156 -309.8355 -271.5164
+           Cp    PRESS
+1197 35.47585 17.06826
+                               terms  p      RSS        R2 adjusted_R2
+2046 X1+X3+X4+X5+X6+X7+X8+X9+X10+X11 18 15.15537 0.8438925    0.838627
+           AIC       BIC       Cp    PRESS
+2046 -328.1493 -247.2537 17.15598 16.54589
+
+Cross-validation of entire BIC selection procedure
+                                model   n  log_RMSE   log_MAE dollar_RMSE
+BIC_selected             BIC_selected 522 0.1816203 0.1388525    68703.61
+BIC_without_style   BIC_without_style 522 0.1816203 0.1388525    68703.61
+Full_model                 Full_model 522 0.1773331 0.1364938    68298.26
+Intercept_baseline Intercept_baseline 522 0.4318019 0.3533040   137986.16
+                   dollar_MAE
+BIC_selected         42860.59
+BIC_without_style    42860.59
+Full_model           42133.59
+Intercept_baseline  105597.59
+
+Diagnostic flag counts
+leverage_flag   DFFITS_flag  DFBETAS_flag 
+           43            45           110 
+
+Bonferroni residual flags
+integer(0)
+
+Exploratory interaction model
+lnY ~ X1 + X3 + X5 + X7 + X8 + X10 + X1:X3 + X1:X5 + X1:X8 + 
+    X3:X7 + X3:X8 + X8:X10
+
+Session information
+R version 4.6.1 (2026-06-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Linux Mint 21.3
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/New_York
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.1 stats4_4.6.1  
