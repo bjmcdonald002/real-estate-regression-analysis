@@ -1,7 +1,7 @@
 # Real Estate Regression Analysis
 
 Multiple linear regression analysis of residential sale prices using response
-transformation, categorical predictors, exhaustive model selection, cross-validation,
+transformation, categorical predictors, exhaustive model selection, cross validation,
 and influence diagnostics.
 
 ## Project Overview
@@ -24,7 +24,7 @@ The analysis includes:
 - exploratory Box-Cox response transformation diagnostics
 - exhaustive comparison of all 2,048 main effect subsets
 - AIC, BIC, Mallows' Cp, adjusted R², and PRESS
-- nine-fold cross-validation with preprocessing and BIC selection repeated on training data
+- nine-fold cross validation with preprocessing and BIC selection repeated on training data
 - training residual smearing for dollar scale predictions
 - exploratory hierarchical interaction modeling
 - residual, leverage, DFFITS, Cook's distance, and DFBETAS diagnostics
@@ -70,7 +70,7 @@ fold. The procedures with and without style therefore produced identical
 out-of-fold predictions here. The other selected terms varied across folds;
 the full data formula should not be interpreted as uniquely established.
 
-## Cross-Validation
+## cross validation
 
 Each observation is predicted once from a model trained on the other eight folds.
 Style grouping and exhaustive BIC selection are repeated using training data only.
@@ -91,7 +91,7 @@ the intercept-only baseline.
 
 Dollar predictions use a smearing multiplier calculated from training residuals.
 A single multiplier assumes a common residual distribution and may be imperfect
-under heteroscedasticity. These are internal cross-validation estimates from one
+under heteroscedasticity. These are internal cross validation estimates from one
 split, not an independent external test or evidence of contemporary market performance.
 
 ![Out-of-fold predictions](figures/cv_predictions.png)
@@ -135,7 +135,7 @@ guarantee constant variance or normal errors.
 
 A separate backward AIC search considers pairwise interactions while retaining
 all parent main effects. Its results are exploratory and were not assessed by the
-primary cross-validation procedure. They do not replace the selected main effect
+primary cross validation procedure. They do not replace the selected main effect
 model or supply validated performance claims.
 
 ## Data Source
